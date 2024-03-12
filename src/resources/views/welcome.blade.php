@@ -1,17 +1,23 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <!-- Scripts -->
-    <link href="/css/app.css" rel="stylesheet">
-    <script src="/js/app.js"></script>
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
 
-</head>
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
 
-<body>
-    <h1 class="mt-5">Tutorial made by Positronx.io</h1>
-</body>
-
-</html>
+                        {{ __('You are logged in!') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
