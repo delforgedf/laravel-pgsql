@@ -5,9 +5,10 @@ Projeto reponsável por demonstração dos dados de habitação do estado do Goi
 
 ## Como instalar e executar o projeto
 
-1. ``` docker compose run app composer install ```
-2. Copy ```.env.dev``` to ```.env```
-3. ```docker compose up --build -d```
+
+1. Copie ```.env.dev``` para ```.env```
+2. ```docker compose up --build -d```
+3. ``` docker compose run app composer install ```
 4. ```docker compose run app php artisan migrate```
 5. Projeto rodando ```127.0.0.1:8080``` ou ```localhost:8080```
 
