@@ -15,5 +15,4 @@ Projeto reponsável por demonstração dos dados de habitação do estado do Goi
 
 ## Como rodar comandos larave com Docker Compose
 
-1. ```cd src```
-2. ```docker compose run app php artisan {your command}``` 
+1. ```docker compose run app php artisan {your command}``` 
