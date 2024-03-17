@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('scripts')
-    <script src="{{ asset('js/home/home.js?v=2') }}"></script>
+    <script src="{{ asset('js/home/home.js') }}"></script>
 @endpush
 @push('styles')
     <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
