@@ -96,5 +96,5 @@
     <div class="modal">
         <p>Exemplo de modal</p>
     </div>
-    <div class="loading" id="loading">Carregando &#8230;</div>
+    <div class="loading d-none" id="loading">Carregando &#8230;</div>
 @endsection
