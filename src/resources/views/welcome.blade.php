@@ -5,6 +5,7 @@
 @endpush
 @push('styles')
     <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/spinner/spinner.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -108,6 +109,7 @@
         <div id="map" class="map"></div>
     </div>
     <div class="modal">
-        <p>Second AJAX Example!</p>
+        <p>Exemplo de modal</p>
     </div>
+    <div class="loading" id="loading">Carregando &#8230;</div>
 @endsection

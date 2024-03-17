@@ -176,6 +176,7 @@ $(document).ready(function () {
     }
 
     function loadDataMap(locations, map) {
+        loading();
         locations.forEach(function (location) {
             const icon = handlerMarkerPin(location.area_tematica);
             let tolltip = "<p>" + location.nome_projeto + "</p>";
@@ -236,5 +237,11 @@ $(document).ready(function () {
                 return "https://mapadeobras.seinfra.go.gov.br/assets/landing/img/markers/default.png";
                 break;
         }
+    }
+
+    function loading() {
+        setTimeout(() => {
+            document.querySelector("#loading").classList.toggle("d-none");
+        }, 500);
     }
 });
