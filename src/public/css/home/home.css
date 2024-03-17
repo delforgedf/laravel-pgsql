@@ -1,0 +1,36 @@
+.navbar-bg{
+    background: url(https://mapadeobras.seinfra.go.gov.br/assets/landing/img/header-bg.png) no-repeat center center;
+    background-size: cover;
+}
+.map {
+    min-height: 90vh;
+    width: auto;
+ }
+.leaflet-right{
+    display: none;
+ }
+ footer {
+    background-color: #0064b6 !important;
+ }
+
+ footer h3, h6{
+    color: #fff;
+ }
+ .footer-list {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-list a{
+    color:#fff
+}
+.ouvidoria{
+    background: #2A9E0D;
+    color: #fff;
+    text-transform: uppercase;
+}
+.ouvidoria a{
+    text-decoration: none;
+    color: #fff;
+}
