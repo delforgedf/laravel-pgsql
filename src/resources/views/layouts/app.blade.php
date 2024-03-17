@@ -18,40 +18,46 @@
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+
     <link href="/css/app.css" rel="stylesheet">
     @stack('styles')
-    <!-- Scripts -->
-    {{-- <script src="/js/app.js"></script>
-     --}}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
     @stack('scripts')
 </head>
 
 <body>
     <div id="app">
         <nav class="navbar navbar-light shadow-sm navbar-bg">
-            <div class="row">
-                <div class="col-md-3 col-9">
-                    <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/seinfra-logo-verde.png"
-                        alt=""class="img-fluid">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-9">
+                        <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/seinfra-logo-verde.png"
+                            alt=""class="img-fluid">
+                    </div>
                 </div>
             </div>
-
         </nav>
         <div class="ouvidoria">
-
-            <div class="d-flex justify-content-end flex-wrap">
-                <a class="p-2"
-                    href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
-                    target="_blank">Home</a>
-                <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
-                    target="_blank">Saiba Mais</a>
-                <a class="p-2"
-                    href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
-                    target="_blank">Compliance</a>
-                <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
-                    target="_blank">Ouvidoria</a>
+            <div class="container-fluid">
+                <div class="d-flex justify-content-end flex-wrap">
+                    <a class="p-2"
+                        href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
+                        target="_blank">Home</a>
+                    <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
+                        target="_blank">Saiba Mais</a>
+                    <a class="p-2"
+                        href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
+                        target="_blank">Compliance</a>
+                    <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
+                        target="_blank">Ouvidoria</a>
+                </div>
             </div>
         </div>
 
@@ -59,90 +65,92 @@
             @yield('content')
         </main>
         <footer class="py-3">
-            <div class="row border-bottom pb-4">
-                <div class="col-md-4 col-12">
-                    <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/logo.png" alt="logo"
-                        class="img-fluid">
-                </div>
-                <div class="col-md-4  d-none d-sm-block"></div>
-                <div class="col-md-4 col-12 text-center">
-                    <h3>Governo na palma da mão</h3>
-                    <div class="row ">
-                        <a href="https://play.google.com/store/apps/dev?id=8919028859101894808" target="_blank"
-                            class="col-6 col-sm-6 col-12 mb-2">
-                            <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/google-play-v2.png">
-                        </a>
-                        <a href="https://apps.apple.com/br/developer/estado-de-goias/id1520475540" target="_blank"
-                            class="col-sm-6 col-12 mb-2">
-                            <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/app-store-v2.png">
-                        </a>
+            <div class="container-fluid">
+                <div class="row border-bottom pb-4">
+                    <div class="col-md-4 col-12">
+                        <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/logo.png" alt="logo"
+                            class="img-fluid">
+                    </div>
+                    <div class="col-md-4  d-none d-sm-block"></div>
+                    <div class="col-md-4 col-12 text-center">
+                        <h3>Governo na palma da mão</h3>
+                        <div class="row ">
+                            <a href="https://play.google.com/store/apps/dev?id=8919028859101894808" target="_blank"
+                                class="col-6 col-sm-6 col-12 mb-2">
+                                <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/google-play-v2.png">
+                            </a>
+                            <a href="https://apps.apple.com/br/developer/estado-de-goias/id1520475540" target="_blank"
+                                class="col-sm-6 col-12 mb-2">
+                                <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/app-store-v2.png">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row pt-2">
-                <div class="col-md-4 col-12 text-center mb-2">
-                    <h3 class="widgettitle">Serviços</h3>
-                    <ul class="footer-list">
-                        <li class="list-group-item">
-                            <a href="https://www.go.gov.br/" class="text-decoration-none" target="_blank">Para o
-                                cidadão</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://www.portaldoservidor.go.gov.br/" class="text-decoration-none"
-                                target="_blank">Para o servidor</a>
-                        </li>
-                    </ul>
+                <div class="row pt-2">
+                    <div class="col-md-4 col-12 text-center mb-2">
+                        <h3 class="widgettitle">Serviços</h3>
+                        <ul class="footer-list">
+                            <li class="list-group-item">
+                                <a href="https://www.go.gov.br/" class="text-decoration-none" target="_blank">Para o
+                                    cidadão</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://www.portaldoservidor.go.gov.br/" class="text-decoration-none"
+                                    target="_blank">Para o servidor</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-12 text-center mb-2">
+                        <h3 class="widgettitle">Transparência e Ouvidoria</h3>
+                        <ul class="footer-list">
+                            <li class="list-group-item">
+                                <a href="https://transparencia.go.gov.br/" class="text-decoration-none"
+                                    target="_blank">Acesso à Informação</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="http://www.cge.go.gov.br/ouvidoria/" class="text-decoration-none"
+                                    target="_blank">Ouvidoria</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://vaptvupt.go.gov.br/unidades" class="text-decoration-none"
+                                    target="_blank">SIC</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="http://www.cge.go.gov.br/ouvidoria/Register_1.php" class="text-decoration-none"
+                                    target="_blank">e-SIC</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://goias.gov.br/politica-de-privacidade/" class="text-decoration-none"
+                                    target="_blank">Política de Privacidade</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://goias.gov.br/politica-de-cookies/" class="text-decoration-none"
+                                    target="_blank">Política de Cookies</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-12 text-center mb-2">
+                        <h3 class="widgettitle">Contatos</h3>
+                        <ul class="footer-list">
+                            <li class="list-group-item">
+                                <a href="https://goias.gov.br/administracao-direta/" class="text-decoration-none"
+                                    target="_blank">Administração Direta</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://goias.gov.br/autarquias-e-fundacoes/" class="text-decoration-none"
+                                    target="_blank">Autarquias e Fundações</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://goias.gov.br/empresas-publicas/" class="text-decoration-none"
+                                    target="_blank">Empresas Públicas</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-4 col-12 text-center mb-2">
-                    <h3 class="widgettitle">Transparência e Ouvidoria</h3>
-                    <ul class="footer-list">
-                        <li class="list-group-item">
-                            <a href="https://transparencia.go.gov.br/" class="text-decoration-none"
-                                target="_blank">Acesso à Informação</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="http://www.cge.go.gov.br/ouvidoria/" class="text-decoration-none"
-                                target="_blank">Ouvidoria</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://vaptvupt.go.gov.br/unidades" class="text-decoration-none"
-                                target="_blank">SIC</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="http://www.cge.go.gov.br/ouvidoria/Register_1.php" class="text-decoration-none"
-                                target="_blank">e-SIC</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://goias.gov.br/politica-de-privacidade/" class="text-decoration-none"
-                                target="_blank">Política de Privacidade</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://goias.gov.br/politica-de-cookies/" class="text-decoration-none"
-                                target="_blank">Política de Cookies</a>
-                        </li>
-                    </ul>
+                <div class="mt-5 text-center">
+                    <h6>Edifício Palácio de Prata - Rua 5, n° 833 - 5º, 6º e 7º andares - Setor Oeste - CEP 74.115-060 -
+                        Goiânia - Goiás</h6>
                 </div>
-                <div class="col-md-4 col-12 text-center mb-2">
-                    <h3 class="widgettitle">Contatos</h3>
-                    <ul class="footer-list">
-                        <li class="list-group-item">
-                            <a href="https://goias.gov.br/administracao-direta/" class="text-decoration-none"
-                                target="_blank">Administração Direta</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://goias.gov.br/autarquias-e-fundacoes/" class="text-decoration-none"
-                                target="_blank">Autarquias e Fundações</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="https://goias.gov.br/empresas-publicas/" class="text-decoration-none"
-                                target="_blank">Empresas Públicas</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-5 text-center">
-                <h6>Edifício Palácio de Prata - Rua 5, n° 833 - 5º, 6º e 7º andares - Setor Oeste - CEP 74.115-060 -
-                    Goiânia - Goiás</h6>
             </div>
         </footer>
     </div>

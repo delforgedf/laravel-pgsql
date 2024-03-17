@@ -203,11 +203,18 @@ $(document).ready(function () {
                 .addTo(map)
                 .bindTooltip(tolltip)
                 .on("click", function (event) {
-                    console.log(event);
+                    openModal(event);
                 });
         });
     }
 
+    function openModal(data) {
+        $(".modal").modal({
+            fadeDuration: 300,
+            closeClass: "icon-close",
+            closeText: "x",
+        });
+    }
     function handlerMarkerPin(marker) {
         switch (marker) {
             case "Habitação":
