@@ -15,7 +15,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // Auth routes
