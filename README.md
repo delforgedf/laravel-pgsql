@@ -1,17 +1,18 @@
-# Install and Set Up Laravel with Docker Compose
+# GeoHabitação
 
-Setting up Laravel in the local environment with Docker using the LEMP stack that includes: Nginx, MySQL, PHP, and phpMyAdmin.
+Projeto reponsável por demonstração dos dados de habitação do estado do Goiás
 
-## How to Install and Run the Project
+
+## Como instalar e executar o projeto
 
 1. ``` docker compose run app composer install ```
 2. Copy ```.env.dev``` to ```.env```
 3. ```docker compose up --build -d```
 4. ```docker compose run app php artisan migrate```
-5. You can see the project on ```127.0.0.1:8080```
+5. Projeto rodando ```127.0.0.1:8080``` ou ```localhost:8080```
 
 
-## How to run Laravel Commands with Docker Compose
+## Como rodar comandos larave com Docker Compose
 
 1. ```cd src```
 2. ```docker compose run app php artisan {your command}``` 
