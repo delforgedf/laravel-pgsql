@@ -40,29 +40,14 @@
             </div>
             <div class="row">
                 <div class="col-12 col-sm-4 my-2">
-                    <p>Status</p>
+                    <p>Município</p>
                     <select class="form-select" aria-label="Status" name="status">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
                 </div>
-                <div class="col-12 col-sm-4 my-2">
-                    <p>Tipo do Projeto</p>
-                    <select class="form-select" aria-label="Tipo de projeto" name="tp_projeto">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-12 col-sm-4 my-2">
-                    <p>Orgão</p>
-                    <select class="form-select" aria-label="Orgãoe" name="orgao">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+
             </div>
 
 

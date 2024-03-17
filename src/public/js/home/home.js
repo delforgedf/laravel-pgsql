@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
     initMap();
     function initMap() {
-        var map = L.map("map").setView([-16.6869, -49.2648], 8);
+        var map = L.map("map").setView([-16.6869, -49.2648], 10);
         map.setMinZoom(2);
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
