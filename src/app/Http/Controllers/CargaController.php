@@ -38,15 +38,12 @@ class CargaController extends Controller
 
     public function importData()
     {
-
-
-        // $this->unidadeRepository->deleteAll();
-        // $this->defictRepository->deleteAll();
-        // $this->municipioRepository->deleteAll();
-
-        // $this->importMunicipios();
-        // // $this->importDeficthabitacional();
-        // // $this->importUnidadesEducacao();
+        $this->unidadeRepository->deleteAll();
+        $this->defictRepository->deleteAll();
+        $this->municipioRepository->deleteAll();
+        $this->importMunicipios();
+        $this->importDeficthabitacional();
+        $this->importUnidadesEducacao();
         $this->importUnidadesSaude();
     }
 
