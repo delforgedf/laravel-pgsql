@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\CargaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,8 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/importacao', [CargaController::class, 'importData'])->name('importacao.unidades');
 
 // Auth routes
 Route::get('admin/login', [LoginController::class, 'showLoginForm'])->name('login');

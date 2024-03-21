@@ -66,7 +66,7 @@
         </main>
         <footer class="py-3">
             <div class="container-fluid">
-                <div class="row border-bottom pb-4">
+                <div class="row pb-4 footer-border">
                     <div class="col-md-4 col-12">
                         <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/logo.png" alt="logo"
                             class="img-fluid">

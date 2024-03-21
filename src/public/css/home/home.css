@@ -58,3 +58,6 @@
     -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
   }
+.footer-border{
+    border-bottom: 2px solid rgba(1,62,127,.2);
+}

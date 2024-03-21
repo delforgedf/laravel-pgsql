@@ -5,6 +5,7 @@ $(document).ready(function () {
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
     }).addTo(map);
+    map.scrollWheelZoom.disable();
     getData();
     $("#filterButton").on("click", function () {
         let filter = [];
