@@ -17,4 +17,9 @@ class UnidadeRepository implements UnidadeRepositoryInterface
     {
         Unidades::insert($data);
     }
+
+    public function deleteAll()
+    {
+        Unidades::getQuery()->delete();
+    }
 }

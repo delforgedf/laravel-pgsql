@@ -11,4 +11,9 @@ class DeficitHabitacionalRepository implements DeficitHabitacionalRepositoryInte
     {
         return Deficit_Habitacional::insert($data);
     }
+
+    public function deleteAll()
+    {
+        return Deficit_Habitacional::getQuery()->delete();
+    }
 }

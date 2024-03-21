@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Interfaces\MunicipioRepositoryInterface;
 use App\Models\Municipios;
+use Illuminate\Support\Facades\Http;
 
 class MunicipioRepository implements MunicipioRepositoryInterface
 {
@@ -25,9 +26,7 @@ class MunicipioRepository implements MunicipioRepositoryInterface
 
     public function getByCep($cep)
     {
-        $url = 'https://viacep.com.br/ws/' . $cep . '/json/';
-        $response = file_get_contents($url);
-        $response = json_decode($response, true);
-        return $response['ibge'];
+        $response = Http::get("viacep.com.br/ws/$cep/json/")->json();
+        return isset($response['ibge']) ? $response['ibge'] : false;
     }
 }
