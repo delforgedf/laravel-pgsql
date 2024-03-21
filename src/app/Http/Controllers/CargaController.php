@@ -32,8 +32,8 @@ class CargaController extends Controller
         $this->defictRepository->deleteAll();
         $this->municipioRepository->deleteAll();
         $this->importMunicipios();
-        $this->importDeficthabitacional();
-        $this->importUnidadesEducacao();
+        // $this->importDeficthabitacional();
+        // $this->importUnidadesEducacao();
         $this->importUnidadesSaude();
     }
 
@@ -91,8 +91,8 @@ class CargaController extends Controller
         $csvSaude = 'planilhas/unidades_saude.csv';
         $data = array_map('str_getcsv', file($csvSaude));
         foreach ($data as $key => $unidade_saude) {
-            if ($key > 0 && $key <= 1) {
-                if ($this->municipioRepository->getByCep($unidade_saude[7])) {
+            if ($key > 0 && $key <= 100) {
+                if ($unidade_saude[7]) {
                     $dtoSaude[] =  [
                         'cnes' => trim($unidade_saude[0]),
                         'razao_social' => mb_convert_encoding(strtoupper(trim($unidade_saude[1])), "UTF-8", "HTML-ENTITIES"),
@@ -115,6 +115,7 @@ class CargaController extends Controller
                 }
             }
         }
+
         $this->unidadeRepository->insert($dtoSaude);
     }
 

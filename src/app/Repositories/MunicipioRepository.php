@@ -26,7 +26,7 @@ class MunicipioRepository implements MunicipioRepositoryInterface
 
     public function getByCep($cep)
     {
-        $response = Http::get("viacep.com.br/ws/$cep/json/")->json();
+        $response = Http::get("https://opencep.com/v1/$cep")->json();
         return isset($response['ibge']) ? $response['ibge'] : false;
     }
 }
