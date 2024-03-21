@@ -6,10 +6,6 @@ use App\Interfaces\DeficitHabitacionalRepositoryInterface;
 use App\Interfaces\MunicipioRepositoryInterface;
 use App\Interfaces\UnidadeRepositoryInterface;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-
-
 
 class CargaController extends Controller
 {
@@ -28,16 +24,10 @@ class CargaController extends Controller
         $this->defictRepository = $defictRepository;
     }
 
-    private function hasConvenio($value)
-    {
-        if ($value === 'NÃO POSSUI') {
-            return false;
-        }
-        return true;
-    }
 
     public function importData()
     {
+
         $this->unidadeRepository->deleteAll();
         $this->defictRepository->deleteAll();
         $this->municipioRepository->deleteAll();
@@ -79,7 +69,7 @@ class CargaController extends Controller
                         'cd_mec' => $unidade_educacao[0],
                         'nome' => mb_convert_encoding(strtoupper(trim($unidade_educacao[1])), "UTF-8", "HTML-ENTITIES"),
                         'dep_administrativo' => trim($unidade_educacao[2]),
-                        'has_convenio' => $this->hasConvenio(mb_convert_encoding(strtoupper(trim($unidade_educacao[3])), "UTF-8", "HTML-ENTITIES")),
+                        'has_convenio' => hasConvenio(mb_convert_encoding(strtoupper(trim($unidade_educacao[3])), "UTF-8", "HTML-ENTITIES")),
                         'logradouro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[4])), "UTF-8", "HTML-ENTITIES"),
                         'bairro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[5])), "UTF-8", "HTML-ENTITIES"),
                         'latitude' => trim($unidade_educacao[7]),
