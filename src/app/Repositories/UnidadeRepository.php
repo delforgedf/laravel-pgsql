@@ -15,11 +15,11 @@ class UnidadeRepository implements UnidadeRepositoryInterface
 
     public function insert($data)
     {
-        Unidades::insert($data);
+        return Unidades::insert($data);
     }
 
     public function deleteAll()
     {
-        Unidades::getQuery()->delete();
+        return Unidades::getQuery()->delete();
     }
 }

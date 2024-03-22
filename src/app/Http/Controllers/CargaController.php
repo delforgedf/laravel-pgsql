@@ -89,43 +89,16 @@ class CargaController extends Controller
 
     private function importUnidadesSaude()
     {
-        // dd('jansm');
         $csvSaude = 'planilhas/unidades_saude.csv';
         $data = array_map('str_getcsv', file($csvSaude));
         $i = 0;
         foreach ($data as $key => $unidade_saude) {
             if ($key > 0) {
                 if ($unidade_saude[7]) {
-                    // echo $unidade_saude[7] . '<br>';
                     dispatch(new InsertUnidade($unidade_saude));
-                    // $cod_ibge = $this->municipioRepository->getByCep($unidade_saude[7]);
-                    // if ($cod_ibge) {
-                    //     $dtoSaude[] =  [
-                    //         'cnes' => trim($unidade_saude[0]),
-                    //         'razao_social' => mb_convert_encoding(strtoupper(trim($unidade_saude[1])), "UTF-8", "HTML-ENTITIES"),
-                    //         'nome_fantasia' => mb_convert_encoding(strtoupper(trim($unidade_saude[2])), "UTF-8", "HTML-ENTITIES"),
-                    //         'logradouro' => trim($unidade_saude[3]),
-                    //         'numero' => trim($unidade_saude[4]),
-                    //         'complemento' => trim($unidade_saude[5]),
-                    //         'bairro' => trim($unidade_saude[6]),
-                    //         'cep' => trim($unidade_saude[7]),
-                    //         'telefone' => $unidade_saude[8],
-                    //         'email' => mb_convert_encoding(strtoupper(trim($unidade_saude[9])), "UTF-8", "HTML-ENTITIES"),
-                    //         'has_vinculo_sus' => ($unidade_saude[11] == 'NAO' ? false : true),
-                    //         'tp_unidade_saude' => mb_convert_encoding(strtoupper(trim($unidade_saude[12])), "UTF-8", "HTML-ENTITIES"),
-                    //         'latitude' => trim($unidade_saude[14]),
-                    //         'longitude' => trim($unidade_saude[15]),
-                    //         'cod_ibge' => (int) $cod_ibge,
-                    //         'tp_unidade' => 2,
-                    //         'created_at' => Carbon::now()
-                    //     ];
-                    // }
-
                 }
             }
         }
-        // $this->unidadeRepository->insert($dtoSaude);
-        // echo "<p>" . count($dtoSaude) . " unidades de saúde importadas </p><br>";
     }
 
     public function importMunicipios()
