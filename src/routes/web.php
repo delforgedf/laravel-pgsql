@@ -23,10 +23,10 @@ Route::get('/', function () {
 Route::get('/importacao', [CargaController::class, 'importData'])->name('importacao.unidades');
 
 // Auth routes
-Route::get('admin/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('admin/login',  [LoginController::class, 'login']);
-Route::post('admin/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('password/reset', [ResetPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('password/email', [ResetPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('password/reset', [ResetPasswordController::class, 'reset']);
+// Route::get('admin/login', [LoginController::class, 'showLoginForm'])->name('login');
+// Route::post('admin/login',  [LoginController::class, 'login']);
+// Route::post('admin/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::get('password/reset', [ResetPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('password/email', [ResetPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('password/reset', [ResetPasswordController::class, 'reset']);
