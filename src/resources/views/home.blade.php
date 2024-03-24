@@ -9,53 +9,38 @@
 @endpush
 
 @section('content')
-    <div class="container-fluid">
-        <div class="my-4 shadow-lg p-3 mb-5 rounded filters">
+    <div>
+        <div class="shadow-lg p-3 rounded filters">
             <h3>Busca avançada</h3>
             <div class="row">
                 <div class="col-12 col-sm-4 my-2">
-                    <p>Status</p>
-                    <select class="form-select" aria-label="Status" name="status">
+                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+                <div class="col-12 col-sm-4 my-2">
+                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
                 </div>
                 <div class="col-12 col-sm-4 my-2">
-                    <p>Tipo do Projeto</p>
-                    <select class="form-select" aria-label="Tipo de projeto" name="tp_projeto">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-12 col-sm-4 my-2">
-                    <p>Orgão</p>
-                    <select class="form-select" aria-label="Orgãoe" name="orgao">
+                    <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-sm-4 my-2">
-                    <p>Município</p>
-                    <select class="form-select" aria-label="Status" name="status">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-
-            </div>
-
-
             <div class="col-12 col-sm-1 my-2">
                 <button type="button" id="filterButton" class="btn btn-success"
                     style="background: #2A9E0D; border: none;">Filtrar</button>
             </div>
-            <div class="col-12 col-sm-11">
+            {{-- <div class="col-12 col-sm-11">
                 <div class="row">
                     <div class=" my-2 col-6 col-sm-2">
                         <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/markers/habitacao.png"
@@ -88,13 +73,57 @@
                         <span>Outras</span>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
         <div id="map" class="map"></div>
     </div>
-    <div class="modal">
-        <p>Exemplo de modal</p>
+    <div id="modalDialog" class="modal">
+        <div class="modal-content animate-top">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalhes da unidade</h5>
+                <button type="button" class="close">
+                    <span aria-hidden="true" style="color: #fff">x</span>
+                </button>
+            </div>
+            <div class="modal-body py-2">
+                <div class="row border-bottom border-bottom m-4 p-3">
+                    <div class="col-4">
+                        <h4>Goiânia</h4>
+                    </div>
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class=" bg-primary rounded p-2">jonatas</div>
+                            </div>
+                            <div class="col-4">
+                                <div class=" bg-success rounded p-2">jonatas</div>
+                            </div>
+                            <div class="col-4">
+                                <div class=" bg-warning rounded p-2">jonatas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mx-4">
+                    <div class="col-6 border border-dark">as</div>
+                    <div class="col-6 border border-dark">as</div>
+                </div>
+                <div class="row mx-4">
+                    <div class="col-6 border border-dark">as</div>
+                    <div class="col-6 border border-dark">as</div>
+                </div>
+                <div class="row mx-4">
+                    <div class="col-6 border border-dark">as</div>
+                    <div class="col-6 border border-dark">as</div>
+                </div>
+                <div class="row mx-4">
+                    <div class="col-6 border border-dark">as</div>
+                    <div class="col-6 border border-dark">as</div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="loading d-none" id="loading">Carregando &#8230;</div>
 @endsection

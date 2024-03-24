@@ -27,13 +27,20 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> --}}
 
     @stack('scripts')
 </head>
 
 <body>
     <div id="app">
+        <div class=" header">
+            <div class="px-3">
+                <a href="https://goias.gov.br/"
+                    class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">GOIAS.GOV.BR</a>
+
+            </div>
+        </div>
         <nav class="navbar navbar-light shadow-sm navbar-bg">
             <div class="container-fluid">
                 <div class="row">
@@ -61,7 +68,7 @@
             </div>
         </div>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
         <footer class="py-3">

@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    var modal = $("#modalDialog");
+    var span = $(".close");
+    span.on("click", function () {
+        modal.fadeOut();
+    });
     var map = L.map("map").setView([-16.6869, -49.2648], 10);
     map.setMinZoom(2);
 
@@ -188,19 +193,19 @@ $(document).ready(function () {
     function loadDataMap(locations, map) {
         locations.forEach(function (location) {
             const icon = handlerMarkerPin(location.area_tematica);
-            let tolltip = "<p>" + location.nome_projeto + "</p>";
-            const valorTotalProjeto = parseFloat(
-                location.valor_total_do_projeto
-            ).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
-            tolltip +=
-                "<div><p><b>Valor do projeto:</b> " +
-                valorTotalProjeto +
-                "</p></div>";
-            const valorPago = parseFloat(location.valor_pago).toLocaleString(
-                "pt-br",
-                { style: "currency", currency: "BRL" }
-            );
-            tolltip += "<div><p><b>Valor pago:</b> " + valorPago + "</p></div>";
+            // let tolltip = "<p>" + location.nome_projeto + "</p>";
+            // const valorTotalProjeto = parseFloat(
+            //     location.valor_total_do_projeto
+            // ).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+            // tolltip +=
+            //     "<div><p><b>Valor do projeto:</b> " +
+            //     valorTotalProjeto +
+            //     "</p></div>";
+            // const valorPago = parseFloat(location.valor_pago).toLocaleString(
+            //     "pt-br",
+            //     { style: "currency", currency: "BRL" }
+            // );
+            // tolltip += "<div><p><b>Valor pago:</b> " + valorPago + "</p></div>";
             var customIcon = L.icon({
                 iconUrl: icon,
                 iconSize: [26, 30],
@@ -211,7 +216,7 @@ $(document).ready(function () {
                 icon: customIcon,
             })
                 .addTo(map)
-                .bindTooltip(tolltip)
+                // .bindTooltip(tolltip)
                 .on("click", function (event) {
                     openModal(event);
                 });
@@ -223,6 +228,9 @@ $(document).ready(function () {
             fadeDuration: 300,
             closeClass: "icon-close",
             closeText: "x",
+            show: true,
+            width: 300,
+            height: 500,
         });
     }
     function handlerMarkerPin(marker) {
