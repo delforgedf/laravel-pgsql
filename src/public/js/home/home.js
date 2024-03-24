@@ -113,7 +113,7 @@ $(document).ready(function () {
                         res.municipio;
                     console.log(res.municipio);
                 }
-                loading();
+
                 $(".modal").modal({
                     fadeDuration: 300,
                     closeClass: "icon-close",
@@ -122,6 +122,7 @@ $(document).ready(function () {
                     width: 300,
                     height: 500,
                 });
+                loading();
             },
             error: function (result) {
                 console.log("Erro ao executar a chamada ajax");
