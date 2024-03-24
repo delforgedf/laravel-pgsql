@@ -8,4 +8,6 @@ interface MunicipioRepositoryInterface
     public function store($data);
     public function deleteAll();
     public function getByCep($cep);
+    public function getAll();
+    public function getByCode($cd_ibge);
 }

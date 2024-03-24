@@ -16,4 +16,9 @@ class DeficitHabitacionalRepository implements DeficitHabitacionalRepositoryInte
     {
         return Deficit_Habitacional::getQuery()->delete();
     }
+
+    public function getDeficitByMunicipio($cod_ibge)
+    {
+        return  Deficit_Habitacional::where('cod_ibge', $cod_ibge)->get()->first();
+    }
 }

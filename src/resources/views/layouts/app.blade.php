@@ -45,8 +45,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3 col-9">
-                        <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/seinfra-logo-verde.png"
-                            alt=""class="img-fluid">
+                        <img src="/img/seinfra-logo-verde.png" alt=""class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -75,8 +74,7 @@
             <div class="container-fluid">
                 <div class="row pb-4 footer-border">
                     <div class="col-md-4 col-12">
-                        <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/logo.png" alt="logo"
-                            class="img-fluid">
+                        <img src="/img/logo.png" alt="logo" class="img-fluid">
                     </div>
                     <div class="col-md-4  d-none d-sm-block"></div>
                     <div class="col-md-4 col-12 text-center">
@@ -84,11 +82,11 @@
                         <div class="row ">
                             <a href="https://play.google.com/store/apps/dev?id=8919028859101894808" target="_blank"
                                 class="col-6 col-sm-6 col-12 mb-2">
-                                <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/google-play-v2.png">
+                                <img src="/img/google-play-v2.png">
                             </a>
                             <a href="https://apps.apple.com/br/developer/estado-de-goias/id1520475540" target="_blank"
                                 class="col-sm-6 col-12 mb-2">
-                                <img src="https://mapadeobras.seinfra.go.gov.br/assets/landing/img/app-store-v2.png">
+                                <img src="/img/app-store-v2.png">
                             </a>
                         </div>
                     </div>

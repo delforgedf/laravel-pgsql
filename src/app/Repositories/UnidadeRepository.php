@@ -4,13 +4,26 @@ namespace App\Repositories;
 
 use App\Interfaces\UnidadeRepositoryInterface;
 use App\Models\Unidades;
+use Illuminate\Support\Facades\DB;
 
 class UnidadeRepository implements UnidadeRepositoryInterface
 {
-    public function getAll()
+    public function getAll($request)
     {
-        $result =  Unidades::all();
-        return $result;
+        $tp_unidade = $request->query('tp_unidade');
+        $cod_ibge = $request->query('cod_ibge');
+
+        $result = DB::table('unidades as u');
+
+        if (isset($tp_unidade)) {
+            $result->where('tp_unidade', $tp_unidade);
+        }
+        if (isset($cod_ibge)) {
+            $result->where('cod_ibge', $cod_ibge);
+        } else {
+            $result->where('cod_ibge', '5201405');
+        }
+        return     $result->get();
     }
 
     public function insert($data)

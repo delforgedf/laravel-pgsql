@@ -14,6 +14,13 @@ class MunicipioRepository implements MunicipioRepositoryInterface
         return $result;
     }
 
+    public function getByCode($cod_ibge)
+    {
+        $result =  Municipios::where('cod_ibge', $cod_ibge)->value('nome');
+        return $result;
+    }
+
+
     public function store($data)
     {
         return Municipios::insert($data);
@@ -28,5 +35,10 @@ class MunicipioRepository implements MunicipioRepositoryInterface
     {
         $response = Http::get("https://opencep.com/v1/$cep.json")->json();
         return isset($response['ibge']) ? $response['ibge'] : false;
+    }
+
+    public function getAll()
+    {
+        return Municipios::all();
     }
 }
