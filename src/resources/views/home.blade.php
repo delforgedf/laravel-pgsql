@@ -96,10 +96,17 @@
     <div id="modalDialog" class="modal">
         <div class="modal-content animate-top">
             <div class="modal-header">
-                <h5 class="modal-title">Detalhes da unidade</h5>
-                <button type="button" class="close">
-                    <span aria-hidden="true" style="color: #fff">x</span>
-                </button>
+                <div class="row m-2">
+                    <div class="col-11">
+                        <h5 class="modal-title text-center">Detalhes da unidade</h5>
+                    </div>
+                    <div class="col-1 text-end">
+                        <button type="button" class="close">
+                            <span aria-hidden="true" style="color: #fff">x</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-body py-2">
                 <div class="row border-bottom border-bottom m-4 p-3">

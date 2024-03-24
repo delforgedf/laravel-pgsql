@@ -7613,7 +7613,7 @@ textarea.form-control-lg {
   opacity: var(--bs-backdrop-opacity);
 }
 
-.modal-header {
+/* .modal-header {
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -7625,7 +7625,7 @@ textarea.form-control-lg {
 .modal-header .btn-close {
   padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
   margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x)) calc(-0.5 * var(--bs-modal-header-padding-y)) auto;
-}
+} */
 
 .modal-title {
   margin-bottom: 0;
