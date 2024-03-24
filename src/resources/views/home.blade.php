@@ -22,21 +22,33 @@
 
                 </div> --}}
                 <div class="col-12 col-sm-4 my-2">
-                    <select class="form-select form-select-md mb-3" name="tp_unidade" id="tp_unidade">
-                        <option value="">Selecione o tipo de unidade</option>
-                        <option value="1">Educação</option>
-                        <option value="2">Saúde</option>
-                    </select>
+                    <div class="row">
+                        <div class="col-1"> <i class="bi bi-tags icon-100" style="color: #2A9E0D"></i></div>
+                        <div class="col-11">
+                            <select class="form-select form-select-md mb-3" name="tp_unidade" id="tp_unidade">
+                                <option value="">Selecione o tipo de unidade</option>
+                                <option value="1">Educação</option>
+                                <option value="2">Saúde</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-sm-4 my-2">
-                    <select class="form-select form-select-md mb-3" name="cod_ibge" id="cod_ibge">
-                        <option value="">Selecione um município</option>
-                        @foreach ($municipios as $municipio)
-                            <option value="{{ $municipio->cod_ibge }}"
-                                {{ $municipio->cod_ibge == '5201405' ? 'selected' : '' }}>
-                                {{ $municipio->nome }}</option>
-                        @endforeach
-                    </select>
+                    <div class="row">
+                        <div class="col-1"> <i class="bi bi-geo icon-100" style="color: #2A9E0D"></i></div>
+                        <div class="col-11">
+                            <select class="form-select form-select-md mb-3" name="cod_ibge" id="cod_ibge">
+                                <option value="">Selecione um município</option>
+                                @foreach ($municipios as $municipio)
+                                    <option value="{{ $municipio->cod_ibge }}"
+                                        {{ $municipio->cod_ibge == '5201405' ? 'selected' : '' }}>
+                                        {{ $municipio->nome }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="col-12 col-sm-1 my-2">
                     <button type="button" id="filterButton" class="btn btn-success"
