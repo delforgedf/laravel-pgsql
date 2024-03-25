@@ -36,4 +36,13 @@ class UnidadeRepository implements UnidadeRepositoryInterface
     {
         return Unidades::getQuery()->delete();
     }
+
+    public function getCountByMunicipio($tp_unidade, $cod_ibge)
+    {
+        return Unidades::where('tp_unidade', $tp_unidade)
+            ->where('cod_ibge', $cod_ibge)
+            ->where('latitude', '!=', '')
+            ->where('longitude', '!=', '')
+            ->count();
+    }
 }

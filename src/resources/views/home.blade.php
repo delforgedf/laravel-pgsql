@@ -143,19 +143,19 @@
                             <div class="col-md-4 col-12 py-2">
                                 <div class=" bg-primary rounded p-2">
                                     <h6 class="modalcountunidade">Déficit Habitacional</h6>
-                                    <span class="modalcountunidadeVal">12345</span>
+                                    <span class="modalcountunidadeVal defict">12345</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-12 py-2">
                                 <div class=" bg-success rounded p-2">
                                     <h6 class="modalcountunidade">Unidades de saúde</h6>
-                                    <span class="modalcountunidadeVal">12345</span>
+                                    <span class="modalcountunidadeVal total_saude">12345</span>
                                 </div>
                             </div>
                             <div class="col-md-4 col-12 py-2">
                                 <div class=" bg-warning rounded p-2">
                                     <h6 class="modalcountunidade">Unidades de educação</h6>
-                                    <span class="modalcountunidadeVal">12345</span>
+                                    <span class="modalcountunidadeVal total_educacao">12345</span>
                                 </div>
                             </div>
                         </div>

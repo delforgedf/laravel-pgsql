@@ -29,8 +29,6 @@ class UnidadesController extends Controller
 
     public function getAllUnidades(Request $request)
     {
-        $tp_unidade = $request->query('tp_unidade');
-        $cod_ibge = $request->query('cod_ibge');
 
         $unidades = $this->unidadeRepository->getall($request);
         return response()->json($unidades, 200);
@@ -41,7 +39,12 @@ class UnidadesController extends Controller
         $cod_ibge = $request->query('cod_ibge');
         $deficit = $this->defictRepository->getDeficitByMunicipio($cod_ibge);
         $municipio = $this->municipioRepository->getByCode($cod_ibge);
+        $unidadesEducacao = $this->unidadeRepository->getCountByMunicipio(1, $cod_ibge);
+        $unidadesSaude = $this->unidadeRepository->getCountByMunicipio(2, $cod_ibge);
+
         $deficit['municipio'] = $municipio;
+        $deficit['total_educacao'] = $unidadesEducacao;
+        $deficit['total_saude'] = $unidadesSaude;
         return response()->json($deficit, 200);
     }
 }

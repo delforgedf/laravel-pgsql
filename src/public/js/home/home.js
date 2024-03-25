@@ -99,6 +99,16 @@ $(document).ready(function () {
             data: { cod_ibge: data.cod_ibge },
             dataType: "json",
             success: function (res) {
+                let defict =
+                    parseInt(res.rustico, 10) +
+                    parseInt(res.adensado, 10) +
+                    parseInt(res.improvisado, 10);
+
+                document.querySelector(".defict").innerHTML = defict;
+                document.querySelector(".total_saude").innerHTML =
+                    res.total_saude;
+                document.querySelector(".total_educacao").innerHTML =
+                    res.total_educacao;
                 if (data.tp_unidade == 1) {
                     document
                         .querySelector(".informationEducation")
@@ -117,7 +127,6 @@ $(document).ready(function () {
                     document.querySelector(".qtd_alunos").innerHTML =
                         data.qtd_alunos_matriculados;
                 } else {
-                    console.log(data);
                     document
                         .querySelector(".informationHealth")
                         .classList.remove("d-none");
