@@ -129,7 +129,7 @@
                     <div class="col-md-4 col-12">
                         <div class="row">
                             <div class="col-2">
-                                <i class="bi bi-geo" style="color: #2A9E0D"></i>
+                                <i class="bi bi-geo icon-50" style="color: #2A9E0D"></i>
                             </div>
                             <div class="col-10">
                                 <h3 id="municipio">Goiânia</h3>

@@ -104,6 +104,10 @@ $(document).ready(function () {
                     parseInt(res.adensado, 10) +
                     parseInt(res.improvisado, 10);
 
+                let onus = res.onus.replace(",", ".");
+                onus = parseFloat(onus).toFixed(2);
+                defict = parseFloat(defict) + parseFloat(onus);
+                // defict.replace(".", ",");
                 document.querySelector(".defict").innerHTML = defict;
                 document.querySelector(".total_saude").innerHTML =
                     res.total_saude;
