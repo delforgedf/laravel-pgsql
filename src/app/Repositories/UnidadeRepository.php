@@ -18,6 +18,7 @@ class UnidadeRepository implements UnidadeRepositoryInterface
         if (isset($tp_unidade)) {
             $result->where('tp_unidade', $tp_unidade);
         }
+
         if (isset($cod_ibge)) {
             $result->where('cod_ibge', $cod_ibge);
         } else {

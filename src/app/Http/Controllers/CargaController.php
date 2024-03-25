@@ -28,13 +28,13 @@ class CargaController extends Controller
 
     public function importData()
     {
-        $this->unidadeRepository->deleteAll();
-        $this->defictRepository->deleteAll();
-        $this->municipioRepository->deleteAll();
-        $this->importMunicipios();
-        $this->importDeficthabitacional();
+        // $this->unidadeRepository->deleteAll();
+        // $this->defictRepository->deleteAll();
+        // $this->municipioRepository->deleteAll();
+        // $this->importMunicipios();
+        // $this->importDeficthabitacional();
         $this->importUnidadesEducacao();
-        $this->importUnidadesSaude();
+        // $this->importUnidadesSaude();
     }
 
     private function importDeficthabitacional()
@@ -65,6 +65,12 @@ class CargaController extends Controller
             if ($key > 0) {
                 $cod_ibge =  $this->municipioRepository->getCodeByName(mb_convert_encoding(strtoupper(trim($unidade_educacao[6])), "UTF-8", "HTML-ENTITIES"));
                 if ($cod_ibge) {
+                    $latitude = substr($unidade_educacao[7], 0, 4);
+                    $longitude = substr($unidade_educacao[8], 0, 4);
+                    $latitude2 =  substr($unidade_educacao[7], 5, -1);
+                    $longitude2 = substr($unidade_educacao[8], 5, -1);
+                    $latitude = $latitude . str_replace(".", "", $latitude2);
+                    $longitude = $longitude .  str_replace(".", "", $longitude2);
                     $dtoEducacao[] =  [
                         'cd_mec' => $unidade_educacao[0],
                         'nome' => mb_convert_encoding(strtoupper(trim($unidade_educacao[1])), "UTF-8", "HTML-ENTITIES"),
@@ -72,8 +78,8 @@ class CargaController extends Controller
                         'has_convenio' => hasConvenio(mb_convert_encoding(strtoupper(trim($unidade_educacao[3])), "UTF-8", "HTML-ENTITIES")),
                         'logradouro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[4])), "UTF-8", "HTML-ENTITIES"),
                         'bairro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[5])), "UTF-8", "HTML-ENTITIES"),
-                        'latitude' => trim($unidade_educacao[7]),
-                        'longitude' => trim($unidade_educacao[8]),
+                        'latitude' => trim($latitude),
+                        'longitude' => trim($longitude),
                         'dt_criacao' => trim($unidade_educacao[9]),
                         'qtd_alunos_matriculados' => $unidade_educacao[10],
                         'cod_ibge' => $cod_ibge,

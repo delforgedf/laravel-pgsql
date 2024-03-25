@@ -74,11 +74,11 @@ $(document).ready(function () {
     }
 
     function isLatitude(lat) {
-        return isFinite(lat) && Math.abs(lat) <= 90;
+        return isFinite(lat) && Math.abs(lat) <= 90 && lat != "";
     }
 
     function isLongitude(lng) {
-        return isFinite(lng) && Math.abs(lng) <= 180;
+        return isFinite(lng) && Math.abs(lng) <= 180 && lng != "";
     }
 
     function openModal(data) {
@@ -111,7 +111,6 @@ $(document).ready(function () {
                         data.tp_unidade_saude;
                     document.querySelector("#municipio").innerHTML =
                         res.municipio;
-                    console.log(res.municipio);
                 }
 
                 $(".modal").modal({
