@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    $("#btnLegenda").hover(
+        function () {
+            $(".legenda").toggleClass("d-none");
+        },
+        function () {
+            $(".legenda").toggleClass("d-none");
+        }
+    );
     var modal = $("#modalDialog");
     var span = $(".close");
     span.on("click", function () {

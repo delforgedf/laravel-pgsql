@@ -47,13 +47,29 @@
                             </select>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="col-12 col-sm-1 my-2">
                     <button type="button" id="filterButton" class="btn btn-success"
                         style="background: #2A9E0D; border: none;">Filtrar</button>
                 </div>
+            </div>
+
+            <div><i class="bi bi-info-circle icon-50" id="btnLegenda" role="button" style="color: #2A9E0D"></i></div>
+            <div class="legenda d-none">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Legenda:</h5>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <img src="/img/markers/saude.png" width="25" alt="">
+                        <span>Unidades de Saúde</span>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <img src="/img/markers/educacao.png" width="25" alt="">
+                        <span>Unidades de Educação</span>
+                    </div>
+                </div>
+
             </div>
             {{-- <div class="col-12 col-sm-11">
                 <div class="row">
@@ -126,13 +142,13 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class=" bg-primary rounded p-2">
-                                    <h6 class="modalcountunidade">Unidades de educação</h6>
+                                    <h6 class="modalcountunidade">Déficit Habitacional</h6>
                                     <span class="modalcountunidadeVal">12345</span>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class=" bg-success rounded p-2">
-                                    <h6 class="modalcountunidade">Unidades de educação</h6>
+                                    <h6 class="modalcountunidade">Unidades de saúde</h6>
                                     <span class="modalcountunidadeVal">12345</span>
                                 </div>
                             </div>
