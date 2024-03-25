@@ -11,6 +11,7 @@ $(document).ready(function () {
     var span = $(".close");
     span.on("click", function () {
         modal.fadeOut();
+        document.body.style.overflow = null;
     });
     var map = L.map("map").setView([-16.6869, -49.2648], 10);
     map.setMinZoom(2);
