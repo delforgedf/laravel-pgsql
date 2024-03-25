@@ -7,13 +7,13 @@ $(document).ready(function () {
             $(".legenda").toggleClass("d-none");
         }
     );
-    var modal = $("#modalDialog");
-    var span = $(".close");
+    let modal = $("#modalDialog");
+    let span = $(".close");
     span.on("click", function () {
         modal.fadeOut();
         document.body.style.overflow = null;
     });
-    var map = L.map("map").setView([-16.6869, -49.2648], 10);
+    let map = L.map("map").setView([-16.6869, -49.2648], 10);
     map.setMinZoom(2);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -23,7 +23,7 @@ $(document).ready(function () {
     $("#filterButton").on("click", function () {
         let filter = [];
         $(".filters input, .filters select").each(function (index) {
-            var input = $(this);
+            let input = $(this);
             if (input.val()) {
                 filter.push({ name: input.attr("name"), value: input.val() });
             }
@@ -102,11 +102,28 @@ $(document).ready(function () {
                 if (data.tp_unidade == 1) {
                     document
                         .querySelector(".informationEducation")
-                        .classList.toggle("d-none");
+                        .classList.remove("d-none");
+                    document
+                        .querySelector(".informationHealth")
+                        .classList.add("d-none");
+                    document.querySelector(".cod_mec").innerHTML = data.cd_mec;
+                    document.querySelector(".nm_unidade").innerHTML = data.nome;
+                    document.querySelector(
+                        ".dependencia_administrativa"
+                    ).innerHTML = data.dep_administrativo;
+                    document.querySelector(".logradouro").innerHTML =
+                        data?.logradouro;
+                    document.querySelector(".bairro").innerHTML = data.bairro;
+                    document.querySelector(".qtd_alunos").innerHTML =
+                        data.qtd_alunos_matriculados;
                 } else {
+                    console.log(data);
                     document
                         .querySelector(".informationHealth")
                         .classList.remove("d-none");
+                    document
+                        .querySelector(".informationEducation")
+                        .classList.add("d-none");
                     document.querySelector(".cnes").innerHTML = data.cnes;
                     document.querySelector(".nomeFantasia").innerHTML =
                         data.nome_fantasia;
@@ -118,9 +135,8 @@ $(document).ready(function () {
                             : " - ";
                     document.querySelector(".tpUnidade").innerHTML =
                         data.tp_unidade_saude;
-                    document.querySelector("#municipio").innerHTML =
-                        res.municipio;
                 }
+                document.querySelector("#municipio").innerHTML = res.municipio;
 
                 $(".modal").modal({
                     fadeDuration: 300,
