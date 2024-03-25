@@ -58,7 +58,7 @@
             <div class="legenda d-none">
                 <div class="row">
                     <div class="col-12">
-                        <h5>Legenda:</h5>
+                        <h4>Legendas:</h4>
                     </div>
                     <div class="col-12 mt-2">
                         <img src="/img/markers/saude.png" width="25" alt="">
