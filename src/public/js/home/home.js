@@ -7,12 +7,7 @@ $(document).ready(function () {
             $(".legenda").toggleClass("d-none");
         }
     );
-    let modal = $("#modalDialog");
-    let span = $(".close");
-    span.on("click", function () {
-        modal.fadeOut();
-        document.body.style.overflow = null;
-    });
+    openModalDados();
     let map = L.map("map").setView([-16.6869, -49.2648], 8);
     map.setMinZoom(2);
 
@@ -95,6 +90,12 @@ $(document).ready(function () {
 
     function openModal(data) {
         loading();
+        let modal = $("#modalUnidades");
+        let span = $(".close");
+        span.on("click", function () {
+            modal.fadeOut();
+            document.body.style.overflow = null;
+        });
 
         $.ajax({
             url: "/api/deficit_habitacional",
@@ -154,13 +155,11 @@ $(document).ready(function () {
                 }
                 document.querySelector("#municipio").innerHTML = res.municipio;
 
-                $(".modal").modal({
+                $("#modalUnidades").modal({
                     fadeDuration: 300,
                     closeClass: "icon-close",
                     closeText: "x",
                     show: true,
-                    width: 300,
-                    height: 500,
                 });
                 loading();
             },
@@ -183,5 +182,22 @@ $(document).ready(function () {
 
     function loading() {
         document.querySelector("#loading").classList.toggle("d-none");
+    }
+
+    function openModalDados() {
+        let modalDados = $("#modaDados");
+        let closeDados = $("#closeDados");
+        closeDados.on("click", function () {
+            modalDados.fadeOut();
+            document.body.style.overflow = null;
+        });
+        $("#modaDados").modal({
+            fadeDuration: 300,
+            closeClass: "icon-close",
+            closeText: "x",
+            show: true,
+            width: 300,
+            height: 500,
+        });
     }
 });

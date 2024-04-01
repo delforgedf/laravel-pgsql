@@ -109,7 +109,7 @@
         </div>
         <div id="map" class="map"></div>
     </div>
-    <div id="modalDialog" class="modal">
+    <div id="modalUnidades" class="modal">
         <div class="modal-content animate-top">
             <div class="modal-header">
                 <div class="row m-2">
@@ -209,6 +209,32 @@
                         <div class="col-6 border border-dark tpUnidade"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modaDados">
+        <div class="modal-content animate-top">
+            <div class="modal-header">
+                <div class="row m-2">
+                    <div class="col-md-11 col-10">
+                        <h5 class="modal-title text-center">Fonte dos dados</h5>
+                    </div>
+                    <div class="col-md-1 col-2 text-end">
+                        <button type="button" id="closeDados" class="close">
+                            <span aria-hidden="true" style="color: #fff">x</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body py-2">
+                <div class="row m-4 p-3">
+                    <h5 class="text-center">As informações sobre as unidades apresentadas nessa aplicação são de
+                        responsabilidade de cada órgao
+                        e entidade.</h5>
+                </div>
+
             </div>
         </div>
     </div>
