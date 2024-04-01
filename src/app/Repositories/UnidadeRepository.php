@@ -14,6 +14,8 @@ class UnidadeRepository implements UnidadeRepositoryInterface
         $cod_ibge = $request->query('cod_ibge');
 
         $result = DB::table('unidades as u');
+        $result->where('latitude', '!=', '');
+        $result->where('longitude', '!=', '');
 
         if (isset($tp_unidade)) {
             $result->where('tp_unidade', $tp_unidade);
@@ -22,7 +24,7 @@ class UnidadeRepository implements UnidadeRepositoryInterface
         if (isset($cod_ibge)) {
             $result->where('cod_ibge', $cod_ibge);
         } else {
-            $result->where('cod_ibge', '5201405');
+            $result->where('cod_ibge', '5201108');
         }
         return     $result->get();
     }

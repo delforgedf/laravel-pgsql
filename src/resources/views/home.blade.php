@@ -41,7 +41,7 @@
                                 <option value="">Selecione um município</option>
                                 @foreach ($municipios as $municipio)
                                     <option value="{{ $municipio->cod_ibge }}"
-                                        {{ $municipio->cod_ibge == '5201405' ? 'selected' : '' }}>
+                                        {{ $municipio->cod_ibge == '5201108' ? 'selected' : '' }}>
                                         {{ $municipio->nome }}</option>
                                 @endforeach
                             </select>
@@ -55,7 +55,7 @@
             </div>
 
             <div><i class="bi bi-info-circle icon-50" id="btnLegenda" role="button" style="color: #2A9E0D"></i></div>
-            <div class="legenda d-none">
+            <div class="legenda d-none shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-12">
                         <h4>Legendas:</h4>
@@ -175,15 +175,15 @@
                         <div class="col-6 border border-dark dependencia_administrativa"></div>
                     </div>
                     <div class="row mx-4">
-                        <div class="col-6 border border-dark">Logradouro</div>
+                        <div class="col-6 border border-dark">Endereço</div>
                         <div class="col-6 border border-dark logradouro"></div>
                     </div>
-                    <div class="row mx-4">
+                    {{-- <div class="row mx-4">
                         <div class="col-6 border border-dark">Bairro</div>
                         <div class="col-6 border border-dark bairro"></div>
-                    </div>
+                    </div> --}}
                     <div class="row mx-4">
-                        <div class="col-6 border border-dark">QTD Alunos Matriculados</div>
+                        <div class="col-6 border border-dark">Porte da escola</div>
                         <div class="col-6 border border-dark qtd_alunos"></div>
                     </div>
                 </div>

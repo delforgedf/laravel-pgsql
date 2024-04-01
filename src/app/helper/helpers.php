@@ -2,7 +2,7 @@
 if (!function_exists('hasConvenio')) {
     function hasConvenio($value)
     {
-        if ($value === 'NÃO POSSUI') {
+        if ($value === 'Não') {
             return false;
         }
         return true;

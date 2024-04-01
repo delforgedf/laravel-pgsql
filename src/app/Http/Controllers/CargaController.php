@@ -28,11 +28,11 @@ class CargaController extends Controller
 
     public function importData()
     {
-        // $this->unidadeRepository->deleteAll();
-        // $this->defictRepository->deleteAll();
-        // $this->municipioRepository->deleteAll();
-        // $this->importMunicipios();
-        // $this->importDeficthabitacional();
+        $this->unidadeRepository->deleteAll();
+        $this->defictRepository->deleteAll();
+        $this->municipioRepository->deleteAll();
+        $this->importMunicipios();
+        $this->importDeficthabitacional();
         $this->importUnidadesEducacao();
         // $this->importUnidadesSaude();
     }
@@ -59,41 +59,46 @@ class CargaController extends Controller
 
     private function importUnidadesEducacao()
     {
-        $csvEducacao = 'planilhas/unidades_educacao.csv';
+        $csvEducacao = 'planilhas/new_unidades_educacao.csv';
         $data = array_map('str_getcsv', file($csvEducacao));
         foreach ($data as $key => $unidade_educacao) {
             if ($key > 0) {
-                $cod_ibge =  $this->municipioRepository->getCodeByName(mb_convert_encoding(strtoupper(trim($unidade_educacao[6])), "UTF-8", "HTML-ENTITIES"));
+                $cod_ibge =  $this->municipioRepository->getCodeByName(strtoupper(trim($unidade_educacao[4])));
                 if ($cod_ibge) {
-                    $latitude = substr($unidade_educacao[7], 0, 4);
-                    $longitude = substr($unidade_educacao[8], 0, 4);
-                    $latitude2 =  substr($unidade_educacao[7], 5, -1);
-                    $longitude2 = substr($unidade_educacao[8], 5, -1);
-                    $latitude = $latitude . str_replace(".", "", $latitude2);
-                    $longitude = $longitude .  str_replace(".", "", $longitude2);
+                    // $latitude = substr($unidade_educacao[7], 0, 4);
+                    // $longitude = substr($unidade_educacao[8], 0, 4);
+                    // $latitude2 =  substr($unidade_educacao[7], 5, -1);
+                    // $longitude2 = substr($unidade_educacao[8], 5, -1);
+                    // $latitude = $latitude . str_replace(".", "", $latitude2);
+                    // $longitude = $longitude .  str_replace(".", "", $longitude2);
+
                     $dtoEducacao[] =  [
-                        'cd_mec' => $unidade_educacao[0],
-                        'nome' => mb_convert_encoding(strtoupper(trim($unidade_educacao[1])), "UTF-8", "HTML-ENTITIES"),
-                        'dep_administrativo' => trim($unidade_educacao[2]),
-                        'has_convenio' => hasConvenio(mb_convert_encoding(strtoupper(trim($unidade_educacao[3])), "UTF-8", "HTML-ENTITIES")),
-                        'logradouro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[4])), "UTF-8", "HTML-ENTITIES"),
-                        'bairro' => mb_convert_encoding(strtoupper(trim($unidade_educacao[5])), "UTF-8", "HTML-ENTITIES"),
-                        'latitude' => trim($latitude),
-                        'longitude' => trim($longitude),
-                        'dt_criacao' => trim($unidade_educacao[9]),
-                        'qtd_alunos_matriculados' => $unidade_educacao[10],
+                        'cd_mec' => $unidade_educacao[2],
+                        'nome' => strtoupper(trim($unidade_educacao[1])),
+                        'dep_administrativo' => trim($unidade_educacao[7]),
+                        'has_convenio' => hasConvenio(trim($unidade_educacao[12])),
+                        'logradouro' => strtoupper(trim($unidade_educacao[8])),
+                        // 'bairro' => strtoupper(trim($unidade_educacao[5])),
+                        'latitude' => $unidade_educacao[17],
+                        'longitude' => $unidade_educacao[18],
+                        // 'dt_criacao' => trim($unidade_educacao[9]),
+                        'qtd_alunos_matriculados' => $unidade_educacao[14],
                         'cod_ibge' => $cod_ibge,
                         'tp_unidade' => 1,
                         'created_at' => Carbon::now()
                     ];
+                } else {
+                    echo $unidade_educacao[4] . "<br>";
                 }
+            } else {
+                // dd($unidade_educacao);
             }
         }
         $this->unidadeRepository->insert($dtoEducacao);
         echo "<p>" . count($dtoEducacao) . " unidades de educação importadas </p><br>";
     }
 
-    private function importUnidadesSaude()
+    public function importUnidadesSaude()
     {
         $csvSaude = 'planilhas/unidades_saude.csv';
         $data = array_map('str_getcsv', file($csvSaude));

@@ -13,7 +13,7 @@ $(document).ready(function () {
         modal.fadeOut();
         document.body.style.overflow = null;
     });
-    let map = L.map("map").setView([-16.6869, -49.2648], 10);
+    let map = L.map("map").setView([-16.6869, -49.2648], 8);
     map.setMinZoom(2);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -62,8 +62,11 @@ $(document).ready(function () {
 
             if (
                 isLatitude(location?.latitude) &&
-                isLongitude(location?.latitude)
+                isLongitude(location?.longitude)
             ) {
+                if (i === 1) {
+                    map.setView([location?.latitude, location?.longitude], 8);
+                }
                 const icon = handlerMarkerPin(location?.tp_unidade);
                 var customIcon = L.icon({
                     iconUrl: icon,
@@ -104,7 +107,7 @@ $(document).ready(function () {
                     parseInt(res.adensado, 10) +
                     parseInt(res.improvisado, 10);
 
-                let onus = res.onus.replace(",", ".");
+                let onus = res.onus?.replace(",", ".");
                 onus = parseFloat(onus).toFixed(2);
                 defict = parseFloat(defict) + parseFloat(onus);
                 // defict.replace(".", ",");
@@ -127,7 +130,7 @@ $(document).ready(function () {
                     ).innerHTML = data.dep_administrativo;
                     document.querySelector(".logradouro").innerHTML =
                         data?.logradouro;
-                    document.querySelector(".bairro").innerHTML = data.bairro;
+                    // document.querySelector(".bairro").innerHTML = data.bairro;
                     document.querySelector(".qtd_alunos").innerHTML =
                         data.qtd_alunos_matriculados;
                 } else {

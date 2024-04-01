@@ -21,6 +21,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/importacao', [CargaController::class, 'importData'])->name('importacao.unidades');
 
+Route::get('/importacao-saude', [CargaController::class, 'importUnidadesSaude'])->name('importacao.saude');
+
 // Auth routes
 // Route::get('admin/login', [LoginController::class, 'showLoginForm'])->name('login');
 // Route::post('admin/login',  [LoginController::class, 'login']);
