@@ -4,7 +4,7 @@
 mv /src/.env-homolog /src/.env
 
 # Construir e iniciar os contêineres Docker
-docker-compose up --build -d --services app 
+docker-compose up --build -d --services app nginx
 
 # Instalar as dependências do Composer
 docker compose run app composer install
