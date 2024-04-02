@@ -1,9 +1,5 @@
 @extends('layouts.app')
-
-
-
-
-@if (parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+@if (!is_ssl())
     @push('styles')
         <link href="{{ secure_asset('css/home/home.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/spinner/spinner.css') }}" rel="stylesheet">

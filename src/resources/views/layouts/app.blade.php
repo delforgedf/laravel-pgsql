@@ -21,7 +21,6 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 
-
     <link href="/css/app.css" rel="stylesheet">
     @stack('styles')
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
