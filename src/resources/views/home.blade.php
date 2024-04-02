@@ -1,12 +1,25 @@
 @extends('layouts.app')
 
-@push('scripts')
-    <script src="{{ asset('js/home/home.js') }}"></script>
-@endpush
-@push('styles')
-    <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/spinner/spinner.css') }}" rel="stylesheet">
-@endpush
+
+
+
+@if (parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+    @push('styles')
+        <link href="{{ secure_asset('css/home/home.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/spinner/spinner.css') }}" rel="stylesheet">
+    @endpush
+    @push('scripts')
+        <script src="{{ secure_asset('js/home/home.js') }}"></script>
+    @endpush
+@else
+    @push('styles')
+        <link href="{{ asset('css/home/home.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/spinner/spinner.css') }}" rel="stylesheet">
+    @endpush
+    @push('scripts')
+        <script src="{{ asset('js/home/home.js') }}"></script>
+    @endpush
+@endif
 
 @section('content')
     <div>
