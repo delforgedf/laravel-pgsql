@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@if (!is_ssl())
+@if (is_ssl())
     @push('styles')
-        <link href="{{ secure_asset('css/home/home.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/spinner/spinner.css') }}" rel="stylesheet">
+        <link href="{{ my_asset('css/home/home.css') }}" rel="stylesheet">
+        <link href="{{ my_asset('css/spinner/spinner.css') }}" rel="stylesheet">
     @endpush
     @push('scripts')
-        <script src="{{ secure_asset('js/home/home.js') }}"></script>
+        <script src="{{ my_asset('js/home/home.js') }}"></script>
     @endpush
 @else
     @push('styles')
@@ -22,14 +22,6 @@
         <div class="shadow-lg p-3 rounded filters">
             <h3>Busca avançada</h3>
             <div class="row">
-                {{-- <div class="col-12 col-sm-4 my-2">
-                    <select class="form-select form-select-md mb-3">
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-
-                </div> --}}
                 <div class="col-12 col-sm-4 my-2">
                     <div class="row">
                         <div class="col-1"> <i class="bi bi-tags icon-100" style="color: #2A9E0D"></i></div>
@@ -47,7 +39,6 @@
                         <div class="col-1"> <i class="bi bi-geo icon-100" style="color: #2A9E0D"></i></div>
                         <div class="col-11">
                             <select class="form-select form-select-md mb-3" name="cod_ibge" id="cod_ibge">
-                                <option value="">Selecione um município</option>
                                 @foreach ($municipios as $municipio)
                                     <option value="{{ $municipio->cod_ibge }}"
                                         {{ $municipio->cod_ibge == '5201108' ? 'selected' : '' }}>
@@ -63,7 +54,9 @@
                 </div>
             </div>
 
-            <div><i class="bi bi-info-circle icon-50" id="btnLegenda" role="button" style="color: #2A9E0D"></i></div>
+            <div><i class="bi bi-info-circle icon-50" id="btnLegenda" role="button" style="color: #2A9E0D"></i> <i
+                    class="bi bi-database  icon-50" id="iconDados" role="button" style="color: #2A9E0D"></i></div>
+
             <div class="legenda d-none shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-12">

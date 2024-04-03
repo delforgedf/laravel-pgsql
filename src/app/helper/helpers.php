@@ -22,3 +22,10 @@ if (!function_exists('is_ssl')) {
         }
     }
 }
+
+if (!function_exists('my_asset')) {
+    function my_asset($path)
+    {
+        return asset($path, env('REDIRECT_HTTPS'));
+    }
+}

@@ -35,10 +35,9 @@
 <body>
     <div id="app">
         <div class=" header">
-            <div class="px-3">
+            <div class="py-1 px-4">
                 <a href="https://goias.gov.br/"
-                    class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">GOIAS.GOV.BR</a>
-
+                    style="font-weight: 700; color: #F8D61A !important; text-decoration: none;">GOIAS.GOV.BR</a>
             </div>
         </div>
         <nav class="navbar navbar-light shadow-sm navbar-bg">
@@ -53,15 +52,12 @@
         <div class="ouvidoria">
             <div class="container-fluid">
                 <div class="d-flex justify-content-end flex-wrap">
-                    <a class="p-2"
-                        href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
-                        target="_blank">Home</a>
-                    <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
-                        target="_blank">Saiba Mais</a>
-                    <a class="p-2"
-                        href="https://www.controladoria.go.gov.br/projetos-e-programs/programa-de-compliance-p%C3%BAblico-do-governo-de-goi%C3%A1s.html"
+                    <a class="p-2" href="https://goias.gov.br/seinfra" target="_blank">Home</a>
+                    <a class="p-2" href="https://goias.gov.br/seinfra/acesso-a-informacao" target="_blank">Saiba
+                        Mais</a>
+                    <a class="p-2" href="https://goias.gov.br/seinfra/programa-de-compliance-publico/"
                         target="_blank">Compliance</a>
-                    <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria?orgao=340"
+                    <a class="p-2" href="https://www.go.gov.br/servicos-digitais/cge/nova-ouvidoria"
                         target="_blank">Ouvidoria</a>
                 </div>
             </div>

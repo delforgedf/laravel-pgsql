@@ -25,6 +25,9 @@ $(document).ready(function () {
         });
         getData(filter);
     });
+    $("#iconDados").on("click", function () {
+        openModalDados();
+    });
 
     function getData(filter = null) {
         loading();
